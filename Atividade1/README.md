@@ -413,3 +413,153 @@ set_resultante = set(lista)
 
 # Exibindo o set resultante
 print(f"O set resultante é: {set_resultante}")
+
+#13. Crie um set contendo os valores {5, 10, 15, 20}. Adicione o número 25 a esse set e depois remova o valor 15. Mostre o set após cada alteração.
+
+# Criação do set inicial
+meu_set = {5, 10, 15, 20}
+print("Set inicial:", meu_set)  
+
+# Adicionando 25
+meu_set.add(25)
+print("Após adicionar 25:", meu_set)  
+
+# Removendo 15
+meu_set.remove(15)
+print("Após remover 15:", meu_set)  
+
+#14. Verifique se o número 7 está presente no set {1, 2, 3, 4, 5}. O programa deve exibir uma mensagem informando se o número foi encontrado ou não no set.
+
+# Criação do set
+meu_set = {1, 2, 3, 4, 5}
+
+# Número a ser verificado
+numero = 7
+
+# Verificação
+if numero in meu_set:
+    print(f"O número {numero} foi encontrado no set.")
+else:
+    print(f"O número {numero} não está presente no set.")
+
+#15. Crie um set vazio e adicione vários valores a ele usando um laço de repetição (por exemplo, um for ou while). No final, mostre todos os valores armazenados no set.
+
+# Criação de um set vazio
+meu_set = set()
+
+# Adicionando valores ao set usando um laço for
+for valor in range(1, 6):
+    meu_set.add(valor)
+
+# Exibindo todos os valores armazenados no set
+print("Valores no set:", meu_set)
+
+#16. Crie um dicionário com os pares chave-valor 'nome': 'Ana', 'idade': 22, 'curso': 'Engenharia'. Adicione uma nova chave 'universidade': 'USP' ao dicionário. Em seguida, exiba o dicionário completo com todas as informações.
+
+# Criação do dicionário
+meu_dicionario = {
+    'nome': 'Ana',
+    'idade': 22,
+    'curso': 'Engenharia'
+}
+
+# Adicionando a nova chave 'universidade'
+meu_dicionario['universidade'] = 'USP'
+
+# Exibindo o dicionário completo
+print("Dicionário completo:", meu_dicionario)
+
+#17. Escreva um programa que percorra um dicionário com várias chaves e valores. Para cada par, imprima a chave e o valor no formato: Chave: X, Valor: Y. O dicionário pode conter qualquer informação que você preferir.
+
+# Exemplo de dicionário
+dados = {
+    "nome": "Alice",
+    "idade": 30,
+    "cidade": "São Paulo",
+    "profissão": "Engenheira"
+}
+
+# Percorrendo o dicionário e imprimindo as chaves e valores
+for chave, valor in dados.items():
+    print(f"Chave: {chave}, Valor: {valor}")
+
+#18. Crie um dicionário que relacione nomes de alunos às suas notas. Depois, crie uma função que calcule e exiba a média das notas desses alunos com base nas informações do dicionário.
+
+# Dicionário de alunos e suas notas
+notas_alunos = {
+    "João": 7.5,
+    "Maria": 8.0,
+    "Pedro": 6.5,
+    "Ana": 9.0,
+    "Luiz": 5.5
+}
+
+def calcular_media(notas):
+    # Calcula a média das notas
+    media = sum(notas.values()) / len(notas)
+    return media
+
+# Calculando a média das notas dos alunos
+media_notas = calcular_media(notas_alunos)
+
+# Exibindo a média
+print(f"A média das notas dos alunos é: {media_notas:.2f}")
+
+#19. Escreva um programa que permita ao usuário buscar o valor de uma chave específica em um dicionário. Caso a chave não exista, o programa deve exibir uma mensagem dizendo que a chave não foi encontrada. Teste o programa com diferentes chaves.
+
+# Dicionário de exemplo
+dados = {
+    "nome": "Carlos",
+    "idade": 25,
+    "cidade": "Rio de Janeiro",
+    "profissão": "Designer"
+}
+
+# Função para buscar valor por chave
+def buscar_chave(dicionario, chave):
+    if chave in dicionario:
+        return dicionario[chave]
+    else:
+        return None
+
+# Solicita ao usuário a chave que deseja buscar
+chave_usuario = input("Digite a chave que deseja buscar: ")
+
+# Busca e exibe o resultado
+resultado = buscar_chave(dados, chave_usuario)
+
+if resultado is not None:
+    print(f"O valor da chave '{chave_usuario}' é: {resultado}")
+else:
+    print(f"A chave '{chave_usuario}' não foi encontrada.")
+
+#20. Dado um dicionário que contém produtos e seus respectivos preços, como {'pão': 2.50, 'leite': 3.00, 'café': 4.50}, permita que o usuário altere o preço de um dos produtos e exiba o dicionário atualizado com o novo valor.
+
+# Dicionário de produtos e preços
+produtos = {
+    'pão': 2.50,
+    'leite': 3.00,
+    'café': 4.50
+}
+
+# Exibindo o dicionário original
+print("Produtos e preços atuais:")
+for produto, preco in produtos.items():
+    print(f"{produto}: R${preco:.2f}")
+
+# Solicita ao usuário o nome do produto e o novo preço
+produto_alterar = input("Digite o nome do produto que deseja alterar o preço: ").strip()
+novo_preco = float(input("Digite o novo preço: "))
+
+# Altera o preço se o produto existir
+if produto_alterar in produtos:
+    produtos[produto_alterar] = novo_preco
+    print(f"\nPreço do '{produto_alterar}' atualizado para R${novo_preco:.2f}.")
+else:
+    print(f"\nO produto '{produto_alterar}' não foi encontrado.")
+
+# Exibindo o dicionário atualizado
+print("\nDicionário atualizado:")
+for produto, preco in produtos.items():
+    print(f"{produto}: R${preco:.2f}")
+    
