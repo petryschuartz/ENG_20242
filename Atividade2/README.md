@@ -335,3 +335,334 @@ print(f"Os números divisíveis por {divisor} são: {divisiveis}")
 
 #5. Escreva uma função que receba duas listas e retorne um conjunto com os elementos que aparecem em ambas.
 
+def elementos_comuns(lista1, lista2):
+    """
+    Retorna um conjunto com os elementos que aparecem em ambas as listas.
+
+    Args:
+        lista1 (list): A primeira lista.
+        lista2 (list): A segunda lista.
+
+    Returns:
+        set: Um conjunto com os elementos comuns entre as duas listas.
+    """
+    return set(lista1) & set(lista2)
+
+# Exemplo de uso:
+lista1 = [1, 2, 3, 4, 5]
+lista2 = [4, 5, 6, 7, 8]
+resultado = elementos_comuns(lista1, lista2)
+print(resultado)  # Saída: {4, 5}
+
+#6. Crie uma função que receba uma lista e retorne uma nova lista com os elementos em ordem inversa.
+
+def inverter_lista(lista):
+    """
+    Retorna uma nova lista com os elementos em ordem inversa.
+
+    Args:
+        lista (list): A lista original.
+
+    Returns:
+        list: Uma nova lista com os elementos em ordem inversa.
+    """
+    return lista[::-1]
+
+# Exemplo de uso:
+lista = [1, 2, 3, 4, 5]
+resultado = inverter_lista(lista)
+print(resultado)  # Saída: [5, 4, 3, 2, 1]
+
+#7. Escreva uma função que receba uma lista de números e retorne uma lista contendo o quadrado de cada número.
+
+def quadrados(lista):
+    """
+    Retorna uma lista contendo o quadrado de cada número da lista original.
+
+    Args:
+        lista (list): Lista de números.
+
+    Returns:
+        list: Lista com os quadrados de cada número.
+    """
+    return [num ** 2 for num in lista]
+
+# Exemplo de uso:
+numeros = [1, 2, 3, 4, 5]
+resultado = quadrados(numeros)
+print(resultado)  # Saída: [1, 4, 9, 16, 25]
+
+#8. Crie uma função que receba uma lista e um valor, e retorne uma lista com os elementos maiores que esse valor.
+
+def maiores_que(lista, valor):
+    """
+    Retorna uma lista com os elementos da lista original que são maiores que o valor fornecido.
+
+    Args:
+        lista (list): Lista de números.
+        valor (int ou float): O valor de comparação.
+
+    Returns:
+        list: Lista com os elementos maiores que o valor.
+    """
+    return [num for num in lista if num > valor]
+
+# Exemplo de uso:
+numeros = [1, 5, 8, 10, 3, 7]
+valor = 5
+resultado = maiores_que(numeros, valor)
+print(resultado)  # Saída: [8, 10, 7]
+
+#9. Escreva uma função que receba duas listas e retorne uma lista dos elementos que estão em apenas uma das listas.
+
+def elementos_unicos(lista1, lista2):
+    """
+    Retorna uma lista com os elementos que estão em apenas uma das duas listas.
+
+    Args:
+        lista1 (list): A primeira lista.
+        lista2 (list): A segunda lista.
+
+    Returns:
+        list: Lista dos elementos únicos de cada lista.
+    """
+    conjunto1 = set(lista1)
+    conjunto2 = set(lista2)
+    diferenca_simetrica = conjunto1 ^ conjunto2  # Operador ^ faz a diferença simétrica
+    return list(diferenca_simetrica)
+
+# Exemplo de uso:
+lista1 = [1, 2, 3, 4, 5]
+lista2 = [4, 5, 6, 7, 8]
+resultado = elementos_unicos(lista1, lista2)
+print(resultado)  # Saída: [1, 2, 3, 6, 7, 8]
+
+#10. Faça uma função que receba uma lista e retorne um conjunto dos elementos únicos.
+
+def elementos_unicos(lista):
+    """
+    Retorna um conjunto com os elementos únicos da lista.
+
+    Args:
+        lista (list): Lista de elementos.
+
+    Returns:
+        set: Conjunto com os elementos únicos.
+    """
+    return set(lista)
+
+# Exemplo de uso:
+lista = [1, 2, 2, 3, 4, 4, 5]
+resultado = elementos_unicos(lista)
+print(resultado)  # Saída: {1, 2, 3, 4, 5}
+
+#11. Crie uma função que receba duas listas e retorne uma lista dos elementos únicos que estão em ambas.
+
+def elementos_comuns_unicos(lista1, lista2):
+    """
+    Retorna uma lista dos elementos únicos que estão em ambas as listas.
+
+    Args:
+        lista1 (list): A primeira lista.
+        lista2 (list): A segunda lista.
+
+    Returns:
+        list: Lista com os elementos únicos presentes em ambas as listas.
+    """
+    conjunto1 = set(lista1)
+    conjunto2 = set(lista2)
+    interseccao = conjunto1 & conjunto2  # Operador & calcula a interseção
+    return list(interseccao)
+
+# Exemplo de uso:
+lista1 = [1, 2, 2, 3, 4, 5]
+lista2 = [4, 4, 5, 6, 7]
+resultado = elementos_comuns_unicos(lista1, lista2)
+print(resultado)  # Saída: [4, 5]
+
+#12. Escreva uma função que receba uma lista e retorne uma lista contendo os elementos que aparecem mais de uma vez.
+
+def elementos_repetidos(lista):
+    """
+    Retorna uma lista contendo os elementos que aparecem mais de uma vez na lista.
+
+    Args:
+        lista (list): Lista de elementos.
+
+    Returns:
+        list: Lista dos elementos que aparecem mais de uma vez, sem duplicatas.
+    """
+    contador = {}
+    repetidos = set()
+    
+    for item in lista:
+        if item in contador:
+            repetidos.add(item)
+        else:
+            contador[item] = 1
+    
+    return list(repetidos)
+
+# Exemplo de uso:
+lista = [1, 2, 2, 3, 4, 4, 5, 5, 5]
+resultado = elementos_repetidos(lista)
+print(resultado)  # Saída: [2, 4, 5]
+
+#13. Faça uma função que receba uma lista de números e retorne uma lista dos números pares.
+
+def numeros_pares(lista):
+    """
+    Retorna uma lista contendo apenas os números pares da lista original.
+
+    Args:
+        lista (list): Lista de números.
+
+    Returns:
+        list: Lista com os números pares.
+    """
+    return [num for num in lista if num % 2 == 0]
+
+# Exemplo de uso:
+numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+resultado = numeros_pares(numeros)
+print(resultado)  # Saída: [2, 4, 6, 8]
+
+#14. Escreva uma função que receba uma lista de números e um valor, e retorne uma lista com os índices dos elementos maiores que o valor.
+
+def indices_maiores_que(lista, valor):
+    """
+    Retorna uma lista com os índices dos elementos da lista que são maiores que o valor fornecido.
+
+    Args:
+        lista (list): Lista de números.
+        valor (int ou float): O valor de comparação.
+
+    Returns:
+        list: Lista com os índices dos elementos maiores que o valor.
+    """
+    return [i for i, num in enumerate(lista) if num > valor]
+
+# Exemplo de uso:
+numeros = [1, 5, 8, 3, 10, 7]
+valor = 5
+resultado = indices_maiores_que(numeros, valor)
+print(resultado)  # Saída: [2, 4, 5]
+
+#15. Crie uma função que receba uma lista de strings e retorne uma lista com o tamanho de cada string.
+
+def tamanhos_das_strings(lista):
+    """
+    Retorna uma lista com o tamanho de cada string na lista original.
+
+    Args:
+        lista (list): Lista de strings.
+
+    Returns:
+        list: Lista com o tamanho de cada string.
+    """
+    return [len(s) for s in lista]
+
+# Exemplo de uso:
+strings = ["apple", "banana", "cherry"]
+resultado = tamanhos_das_strings(strings)
+print(resultado)  # Saída: [5, 6, 6]
+
+#16. Escreva uma função que receba uma lista de números e retorne uma lista contendo cada número elevado ao cubo.
+
+def cubos(lista):
+    """
+    Retorna uma lista com cada número da lista elevado ao cubo.
+
+    Args:
+        lista (list): Lista de números.
+
+    Returns:
+        list: Lista com os números elevados ao cubo.
+    """
+    return [num ** 3 for num in lista]
+
+# Exemplo de uso:
+numeros = [1, 2, 3, 4, 5]
+resultado = cubos(numeros)
+print(resultado)  # Saída: [1, 8, 27, 64, 125]
+
+#17. Crie uma função que receba uma lista e retorne uma lista de todos os elementos únicos.
+
+def elementos_unicos(lista):
+    """
+    Retorna uma lista com todos os elementos únicos da lista original.
+
+    Args:
+        lista (list): Lista de elementos.
+
+    Returns:
+        list: Lista com os elementos únicos.
+    """
+    return list(set(lista))
+
+# Exemplo de uso:
+lista = [1, 2, 2, 3, 4, 4, 5]
+resultado = elementos_unicos(lista)
+print(resultado)  # Saída: [1, 2, 3, 4, 5]
+
+#18. Escreva uma função que receba uma lista de strings e retorne uma lista contendo as strings que começam com uma letra maiúscula.
+
+def strings_com_maiuscula(lista):
+    """
+    Retorna uma lista contendo as strings que começam com uma letra maiúscula.
+
+    Args:
+        lista (list): Lista de strings.
+
+    Returns:
+        list: Lista contendo as strings que começam com uma letra maiúscula.
+    """
+    return [s for s in lista if s[0].isupper()]
+
+# Exemplo de uso:
+strings = ["apple", "Banana", "Cherry", "dog", "Elephant"]
+resultado = strings_com_maiuscula(strings)
+print(resultado)  # Saída: ['Banana', 'Cherry', 'Elephant']
+
+#19. Faça uma função que receba uma lista de números e retorne uma lista contendo apenas os múltiplos de 3.
+
+def multiplos_de_tres(lista):
+    """
+    Retorna uma lista contendo apenas os números que são múltiplos de 3.
+
+    Args:
+        lista (list): Lista de números.
+
+    Returns:
+        list: Lista com os múltiplos de 3.
+    """
+    return [num for num in lista if num % 3 == 0]
+
+# Exemplo de uso:
+numeros = [1, 2, 3, 4, 5, 6, 9, 12, 15]
+resultado = multiplos_de_tres(numeros)
+print(resultado)  # Saída: [3, 6, 9, 12, 15]
+
+#20. Escreva uma função que receba duas listas e retorne uma lista com a interseção ordenada de forma crescente entre elas.
+
+def intersecao_ordenada(lista1, lista2):
+    """
+    Retorna uma lista com a interseção ordenada de forma crescente entre duas listas.
+
+    Args:
+        lista1 (list): A primeira lista.
+        lista2 (list): A segunda lista.
+
+    Returns:
+        list: Lista com a interseção ordenada.
+    """
+    # Calcula a interseção e ordena
+    interseccao = list(set(lista1) & set(lista2))
+    interseccao.sort()
+    return interseccao
+
+# Exemplo de uso:
+lista1 = [1, 2, 3, 4, 5]
+lista2 = [3, 4, 5, 6, 7]
+resultado = intersecao_ordenada(lista1, lista2)
+print(resultado)  # Saída: [3, 4, 5]
